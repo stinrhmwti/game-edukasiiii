@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAP KULIAH? (Tech-UI Quest) - Game Edukasi ASTRATECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">TA <span>ASTRATECH</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Pengumuman PMB</a></li>
+                <li><a href="#">Program Studi</a></li>
+                <li><a href="#">Jadwal Seleksi</a></li>
+                <li><a href="#">Informasi</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#" class="btn-header-pmb">Pendaftaran PMB</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-viewport">
+            <div class="decor-clouds"></div>
+            <div id="rainbow-decor" class="decor-rainbow"></div>
+
+            <section id="screen-landing" class="screen-section active-screen">
+                <div></div> 
+                <div class="landing-grid">
+                    <div class="hero-left">
+                        <h1>SIAP KULIAH?<br><span class="tag-orange">GAME EDUKASI</span></h1>
+                        <p>Game ini membantu kamu untuk mempersiapkan jenjang perkuliahan dengan cara yang seru!</p>
+                        <div class="icon-row">
+                            <div class="icon-box-small"><div>📝</div>Quiz</div>
+                            <div class="icon-box-small"><div>🖼️</div>Tebak Gambar</div>
+                            <div class="icon-box-small"><div>🧩</div>Puzzle</div>
+                        </div>
+                        <button class="btn-orange-play" onclick="navigateTo('screen-data-diri')">▶ Play</button>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-right-circle">
+                            <span style="font-size: 45px;">🎓</span>
+                            <h2>SIAP KULIAH?</h2>
+                            <p>By ASTRATECH</p>
+                        </div>
+                    </div>
+                </div>
+                <div></div> 
+            </section>
+
+            <section id="screen-data-diri" class="screen-section">
+                <div></div>
+                <div class="white-form-card">
+                    <div class="avatar-top">👨‍💻</div>
+                    <div class="screen-header-banner" style="box-shadow:none; padding:0; margin-bottom:20px;">DATA DIRI KAMU</div>
+                    <div class="form-group-item">
+                        <label>Nama</label>
+                        <input type="text" id="player-name" placeholder="Masukkan nama kamu">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group-item">
+                            <label>Nomor Telepon</label>
+                            <div class="phone-input-container">
+                                <span class="phone-prefix">62</span>
+                                <input type="tel" placeholder="8xxxxxxxxxx">
+                            </div>
+                        </div>
+                        <div class="form-group-item">
+                            <label>Kelas</label>
+                            <input type="text" placeholder="Contoh: XI RPL">
+                        </div>
+                    </div>
+                    <div class="form-group-item">
+                        <label>Asal Sekolah</label>
+                        <input type="text" placeholder="Masukkan nama sekolah">
+                    </div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-landing')">Sebelumnya</button>
+                    <button class="btn-next-solid" onclick="startToRules()">Play Now ▶</button>
+                </div>
+            </section>
+
+            <section id="screen-tata-cara" class="screen-section">
+                <div></div>
+                <div class="tata-cara-container">
+                    <div class="avatar-top">📜</div>
+                    <div class="screen-header-banner">TATA CARA BERMAIN</div>
+                    <div class="tata-cara-item"><div class="bullet-white-circle"></div> Jawab pertanyaan quiz seputar dasar rekayasa perangkat lunak dan UI/UX.</div>
+                    <div class="tata-cara-item"><div class="bullet-white-circle"></div> Analisis gambar komponen antarmuka sistem pada level tebak gambar.</div>
+                    <div class="tata-cara-item"><div class="bullet-white-circle"></div> Pasang komponen hardware komputer ke slot casing yang tepat untuk merakit PC.</div>
+                    <div class="tata-cara-item"><div class="bullet-white-circle"></div> Raih nilai akhir minimal 70% untuk dinyatakan siap masuk kuliah.</div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-data-diri')">Sebelumnya</button>
+                    <button class="btn-next-solid" onclick="navigateTo('screen-level-menu')">Next ➔</button>
+                </div>
+            </section>
+
+            <section id="screen-level-menu" class="screen-section">
+                <div></div>
+                <div>
+                    <div class="screen-header-banner">LEVEL GAME</div>
+                    <div class="level-cards-wrapper">
+                        <div class="menu-level-card c-level1" onclick="initQuizLevel()">
+                            <span class="lvl-sub">Level 1</span>
+                            <span class="lvl-icon">❓</span>
+                            <span class="lvl-title">QUIZ UI & RPL</span>
+                        </div>
+                        <div class="menu-level-card c-level2" onclick="initTebakLevel()">
+                            <span class="lvl-sub">Level 2</span>
+                            <span class="lvl-icon">🖼️</span>
+                            <span class="lvl-title">TEBAK TEKNOLOGI</span>
+                        </div>
+                        <div class="menu-level-card c-level3" onclick="initPuzzleLevel()">
+                            <span class="lvl-sub">Level 3</span>
+                            <span class="lvl-icon">🖥️</span>
+                            <span class="lvl-title">RAKIT KOMPUTER</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-tata-cara')">Sebelumnya</button>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="screen-level1-quiz" class="screen-section">
+                <div class="top-utilities"><button class="btn-mute">🔕</button></div>
+                <div class="screen-header-banner">LEVEL 1 - QUIZ TECH</div>
+                <div class="question-box-card">
+                    <div class="quiz-ilust-area">
+                        <span style="font-size: 40px;">💻</span>
+                        <span style="font-weight: 600; margin-left: 10px;">[ Database Relational Schema Wireframe ]</span>
+                    </div>
+                    <div class="question-statement" id="quiz-question">Memuat soal rekayasa teknologi...</div>
+                    <div class="options-layout-grid" id="quiz-options"></div>
+                    <div class="live-feedback" id="quiz-feedback"></div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-level-menu')">Menu Level</button>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="screen-level2-tebak" class="screen-section">
+                <div class="top-utilities"><button class="btn-mute">🔕</button></div>
+                <div class="screen-header-banner">LEVEL 2 - TEBAK GAMBAR</div>
+                <div class="question-box-card">
+                    <div class="tebak-media-row">
+                        <div class="media-image-frame">
+                            <span style="font-size: 50px;">🎨</span>
+                        </div>
+                        <div class="media-image-frame" style="background-color:#1a202c; color:#fff;">
+                            <span style="font-size: 50px;">📱</span>
+                        </div>
+                    </div>
+                    <div class="media-hint-text">Hint: Kumpulan komponen visual UI, tipografi, grid, dan palet warna yang terstandarisasi agar desain aplikasi konsisten dinamakan...</div>
+                    <div class="options-layout-grid" id="tebak-options"></div>
+                    <div class="live-feedback" id="tebak-feedback"></div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-level-menu')">Menu Level</button>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="screen-level3-puzzle" class="screen-section">
+                <div class="top-utilities"><button class="btn-mute">🔕</button></div>
+                <div class="screen-header-banner">LEVEL 3 - MERAKIT KOMPUTER</div>
+                <div class="puzzle-board-container" style="flex-direction: column; gap: 15px;">
+                    
+                    <p class="puzzle-instruction-tip">
+                        💡 <strong>Cara Menyusun:</strong> Klik komponen di meja acak sebelah kanan, lalu klik slot abu-abu di dalam casing untuk memasangnya!
+                    </p>
+
+                    <div class="puzzle-gameplay-layout">
+                        <div class="puzzle-side-box">
+                            <h4 class="puzzle-side-title">🖥️ Casing Komputer (Target Slot)</h4>
+                            <div class="computer-casing-grid">
+                                <div class="casing-slot-cell" id="pc-slot-1" onclick="targetSlotClicked(1)">
+                                    <span class="slot-tag">[Slot 1]</span> <strong>Tempat Processor</strong>
+                                </div>
+                                <div class="casing-slot-cell" id="pc-slot-2" onclick="targetSlotClicked(2)">
+                                    <span class="slot-tag">[Slot 2]</span> <strong>Tempat RAM</strong>
+                                </div>
+                                <div class="casing-slot-cell" id="pc-slot-3" onclick="targetSlotClicked(3)">
+                                    <span class="slot-tag">[Slot 3]</span> <strong>Tempat Storage SSD</strong>
+                                </div>
+                                <div class="casing-slot-cell" id="pc-slot-4" onclick="targetSlotClicked(4)">
+                                    <span class="slot-tag">[Slot 4]</span> <strong>Tempat Power Supply</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="puzzle-side-box" style="width: 45%;">
+                            <h4 class="puzzle-side-title">📦 Meja Komponen Perangkat Keras</h4>
+                            <div class="hardware-source-pool" id="hardware-pool"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav-action-bar">
+                    <button class="btn-prev-outline" onclick="navigateTo('screen-level-menu')">Menu Level</button>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="screen-game-over" class="screen-section">
+                <div></div>
+                <div class="victory-card-box">
+                    <div class="victory-trophy" id="end-emoji">🏆</div>
+                    <h2 id="end-title">HASIL AKHIR SELEKSI</h2>
+                    <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Skor evaluasi kompetensi akademik game PMB:</p>
+                    
+                    <div class="result-stats-board">
+                        <div class="stat-item">
+                            <span class="stat-label">Nama Calon Mahasiswa</span>
+                            <span class="stat-value" id="end-name">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Hasil Skor Akhir</span>
+                            <span class="stat-value" id="end-percentage" style="font-size: 18px;">0%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Status Kelulusan</span>
+                            <span class="stat-value" id="end-status">-</span>
+                        </div>
+                    </div>
+
+                    <p id="end-motivation" style="font-weight: 600; font-size: 14px; margin-bottom: 25px; line-height: 1.5; color: #2d3748;"></p>
+
+                    <button class="btn-submit-red" onclick="navigateTo('screen-feedback')">Isi Form Masukan Game ➔</button>
+                </div>
+                <div></div>
+            </section>
+
+            <section id="screen-feedback" class="screen-section">
+                <div></div>
+                <div class="feedback-card">
+                    <div style="font-size: 45px; margin-bottom: 5px;">🌟</div>
+                    <h2>FEEDBACK GAME</h2>
+                    <p style="margin-bottom: 15px; color:#666; font-size: 13px;">Berikan kritik dan saran penataan UI/UX game ini!</p>
+                    <textarea id="feedback-text" rows="4" placeholder="Tulis masukan kamu di sini..."></textarea>
+                    <button class="btn-submit-red" onclick="submitFinalFeedback()">Kirim & Selesai</button>
+                </div>
+                <div></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid-container">
+            <div class="footer-column-box">
+                <h4>Alamat</h4>
+                <p><strong>Kampus Cikarang:</strong> Jl. Gaharu Blok F3 Delta Silicon II Cibatu, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-column-box" style="padding-left: 20px;">
+                <h4>Kontak</h4>
+                <p>💬 +62 878 7177 6117 (WhatsApp)</p>
+                <p>✉️ sekretariat@polytechnic.astra.ac.id</p>
+            </div>
+            <div class="footer-column-box" style="max-width: 180px;">
+                <h4>Media Sosial</h4>
+                <div class="social-media-wrapper"><span>📸 Instagram</span></div>
+            </div>
+        </div>
+        <div class="footer-copyright-bar">ASTRAtech's Official Website. All Rights Reserved</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
